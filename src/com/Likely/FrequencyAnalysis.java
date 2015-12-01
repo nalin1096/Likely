@@ -21,7 +21,6 @@ public class FrequencyAnalysis {
 	public void generateWordMap () {
 		int totalLikes;
 		int totalStatus;
-		int avgLikes;
 		TermAnalysis tf;
 		
 		

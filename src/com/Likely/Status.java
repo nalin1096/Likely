@@ -1,13 +1,13 @@
 package com.Likely;
 
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Status {
 	private String status;
-	private String created_time;
 	private List<Like> likes;
+	private String hour;
+	private String created_time;
 	
 	public static String[] stopWordsofwordnet = {
 			"without", "see", "unless", "due", "also", "must", "might", "like", "]", "[", "}", "{", "<", ">", "?", "\"", "\\", "/", ")", "(", "will", "may", "can", "much", "every", "the", "in", "other", "this", "the", "many", "any", "an", "or", "for", "in", "an", "an ", "is", "a", "about", "above", "after", "again", "against", "all", "am", "an", "and", "any", "are", "aren’t", "as", "at", "be", "because", "been", "before", "being", "below", "between", "both", "but", "by", "can’t", "cannot", "could",
@@ -29,27 +29,45 @@ public class Status {
 			"Why", "Why’s", "With", "Won’t", "Would", "Wouldn’t", "You", "You’d", "You’ll", "You’re", "You’ve", "Your", "Yours", "Yourself", "Yourselves"
 			};
 	
-	public Status (String status, String created_time, List<Like> likes) {
+	public Status (String status,String created_time, List<Like> likes) {
+		String[] t = created_time.split("T+");
+		String[] t1 = t[1].split("\\+");
+		String[] t2 = t1[0].split(":");
+		//int hour = Integer.parseInt(t2[0]);
+		
 		this.status = removeStopWords(status);
-		this.created_time = created_time;
 		this.likes = likes;
+		this.hour = t2[0];
 		for (int i=0;i<stopWordsofwordnet.length;i++) {
 			stopWordsofwordnet[i] = stopWordsofwordnet[i].toLowerCase();
 		}
 	}
+	
 					
+	public String getCreated_time() {
+		return created_time;
+	}
+
+
+	public void setCreated_time(String created_time) {
+		this.created_time = created_time;
+	}
+
+
 	public String getStatus() {
 		return status;
 	}
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getCreated_time() {
-		return created_time;
+	public String getHour() {
+		return hour;
 	}
-	public void setCreated_time(String created_time) {
-		this.created_time = created_time;
+
+	public void setHour(String hour) {
+		this.hour = hour;
 	}
+
 	public List<Like> getLikes() {
 		return likes;
 	}
