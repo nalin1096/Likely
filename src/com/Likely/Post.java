@@ -1,20 +1,30 @@
 package com.Likely;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.restfb.Facebook;
 
 public class Post {
 	@Facebook
-	private List <Like> likes;
+	private List <Like> likes = new ArrayList<>();
 	@Facebook
 	private String story;
 	@Facebook
 	private String message;
 	@Facebook
 	private String created_time;
+	@Facebook
+	private String caption;
 	
 	
+	
+	public String getCaption() {
+		return caption;
+	}
+	public void setCaption(String caption) {
+		this.caption = caption;
+	}
 	public String getCreated_time() {
 		return created_time;
 	}

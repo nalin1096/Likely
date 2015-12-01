@@ -33,6 +33,9 @@ public class Status {
 		this.status = removeStopWords(status);
 		this.created_time = created_time;
 		this.likes = likes;
+		for (int i=0;i<stopWordsofwordnet.length;i++) {
+			stopWordsofwordnet[i] = stopWordsofwordnet[i].toLowerCase();
+		}
 	}
 					
 	public String getStatus() {
@@ -60,13 +63,13 @@ public class Status {
 		String[] words = s.split(" ");
 
 		for (String word : words) {
-			wordsList.add(word);
+			wordsList.add(word.toLowerCase());
 		}
 		for (int i = 0; i < wordsList.size(); i++) {
 			for (int j = 0; j < stopWordsofwordnet.length; j++) {
-				System.out.println(i);
 				if (stopWordsofwordnet[j].contains(wordsList.get(i))) {
 					wordsList.remove(i);
+					break;
 				}
 			}
 		}
