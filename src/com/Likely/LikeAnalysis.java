@@ -9,7 +9,7 @@ public class LikeAnalysis {
 	TimeAnalysis ta;
 	
 	public LikeAnalysis (List<Status> status, int start) {
-		fa = new FrequencyAnalysis(status);
+		fa = new FrequencyAnalysis(status,start);
 		ta = new TimeAnalysis(status, start);
 	}
 	

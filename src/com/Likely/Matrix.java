@@ -16,6 +16,7 @@ public class Matrix
 	
 	public Matrix(double [] knownValues)
 	{
+		Data = new double[knownValues.length][1];
 		this.Data[0]=knownValues;
 		numOfRows = knownValues.length;
 		numOfCols = 1;

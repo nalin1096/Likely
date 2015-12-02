@@ -10,9 +10,11 @@ public class FrequencyAnalysis {
 	private TFIDF tfidf = new TFIDF();
 	private HashMap <String,TermAnalysis> wordMap = new HashMap<>();
 	String st;
+	int start;
 	
-	public FrequencyAnalysis (List<Status> status) {
+	public FrequencyAnalysis (List<Status> status, int start) {
 		this.status = status;
+		this.start = start;
 	}
 	
 	public FrequencyAnalysis () {
