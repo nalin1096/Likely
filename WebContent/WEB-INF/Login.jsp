@@ -17,7 +17,7 @@
 		<!--  <img style="margin-top: 138px;" src="./img/facebookloginbutton.png" />  -->
 		Login Using FB
 		</a><br>
-		<a href="home">Generic Data</a>
+		<a href="home">Testing Data</a>
 		<br>
 		<a href="status">New Status</a>
 	</div>
