@@ -33,7 +33,6 @@ public class Status {
 		String[] t = created_time.split("T+");
 		String[] t1 = t[1].split("\\+");
 		String[] t2 = t1[0].split(":");
-		//int hour = Integer.parseInt(t2[0]);
 		
 		this.status = removeStopWords(status);
 		this.likes = likes;

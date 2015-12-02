@@ -6,13 +6,13 @@ public class LikeAnalysis {
 	FrequencyAnalysis fa;
 	TimeAnalysis ta;
 	
-	public LikeAnalysis (List<Status> status) {
+	public LikeAnalysis (List<Status> status, int start) {
 		fa = new FrequencyAnalysis(status);
-		ta = new TimeAnalysis(status);
+		ta = new TimeAnalysis(status, start);
 	}
 	
 	public int analysis(Status status) {
-		int likes = (int) ((0.05*ta.analysis(status)) + (0.95 *fa.analysis(status.getStatus())));
+		int likes = (int) ((0.05*ta.analysis(status)) + (0.95 *fa.analysis(status)));
 		return likes;
 	}
 }

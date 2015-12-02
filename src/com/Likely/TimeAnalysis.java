@@ -7,11 +7,24 @@ import java.util.List;
 public class TimeAnalysis {
 	private List<Status> status = new ArrayList<>();
 	private HashMap<String,TermAnalysis> timeMap = new HashMap<>();
+	int start;
 	
-	public TimeAnalysis (List<Status> status) {
+	public TimeAnalysis (List<Status> status, int start) {
 		this.status = status;
+		this.start = start;
+	}
+	public TimeAnalysis () {
+		
 	}
 	
+	public HashMap<String, TermAnalysis> getTimeMap() {
+		return timeMap;
+	}
+
+	public void setTimeMap(HashMap<String, TermAnalysis> timeMap) {
+		this.timeMap = timeMap;
+	}
+
 	public int analysis (Status status) {
 		generateMap();
 		int likes = getLikes(status);
@@ -23,7 +36,7 @@ public class TimeAnalysis {
 		int totalStatus;
 		TermAnalysis tf;
 		
-		for (int i=21;i<status.size();i++) {
+		for (int i=start;i<status.size();i++) {
 			String time = status.get(i).getHour();
 			if (!timeMap.containsKey(time)) {
 				if (!status.get(i).getLikes().isEmpty()){

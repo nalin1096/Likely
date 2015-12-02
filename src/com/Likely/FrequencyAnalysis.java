@@ -7,14 +7,27 @@ public class FrequencyAnalysis {
 	private List<Status> status;
 	private TFIDF tfidf = new TFIDF();
 	private HashMap <String,TermAnalysis> wordMap = new HashMap<>();
+	String st;
 	
 	public FrequencyAnalysis (List<Status> status) {
 		this.status = status;
 	}
 	
-	public int analysis (String post) {
+	public FrequencyAnalysis () {
+		
+	}
+	
+	public HashMap<String, TermAnalysis> getWordMap() {
+		return wordMap;
+	}
+
+	public void setWordMap(HashMap<String, TermAnalysis> wordMap) {
+		this.wordMap = wordMap;
+	}
+
+	public int analysis (Status status) {
 		generateWordMap();
-		double val = computeAnalysis(post);
+		double val = computeAnalysis(status.getStatus());
 		return (int)val;
 	}
 	
