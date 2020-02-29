@@ -27,5 +27,5 @@ We were successfully able to implement the TF-IDF algorithm. The basic structure
   <i>tf (t,d) = occurrences of t in dtotal terms in d</i> <br>
   <b>idf (t,D) = logN|dD : tT|</b> <br>
   <i>where N is the number of Documents in the corpus</i> </p><br>
-<br>FBAuth Integration</b><br>
+<b>FBAuth Integration</b><br>
 FBAuth has been implemented as well. Any user can login with our app, and we will get an access token linked to the user's Facebook Information. This is then used to prompt the user to write a status and consequently predict the likes on it based on the previous data. <br> <i>[Note: This will not be working right now and FB has blocked our app and did not grant permissions].</i>
